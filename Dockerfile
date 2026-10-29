@@ -26,6 +26,7 @@ FROM node:20.11-slim
 
 WORKDIR /app
 
+RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
 # TODO(step-4e): copy the fully-installed app from the builder stage.
 COPY --from=builder /app ./
 
